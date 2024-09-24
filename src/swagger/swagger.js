@@ -1,4 +1,3 @@
-// swagger.js
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { fileURLToPath } from 'url';
@@ -17,8 +16,6 @@ const options = {
   },
   apis: [join(__dirname, '../','modules' , '**', '*.js')],
 };
-console.log(join(__dirname, '../','modules' , '**', '*.js'));
-
 const specs = swaggerJsdoc(options);
 
 export  {
