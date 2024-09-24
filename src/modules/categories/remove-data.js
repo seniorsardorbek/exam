@@ -1,4 +1,4 @@
-import { BadRequestError, NotFoundError } from '../../shared/errors/index.js';
+import { NotFoundError } from '../../shared/errors/index.js';
 import Category from './Categories.js';
 
 export const removeData = async (req) => {

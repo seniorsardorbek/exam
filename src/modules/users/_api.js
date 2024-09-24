@@ -1,3 +1,4 @@
+
 import express from 'express';
 import isLoggedIn from '../../shared/auth/is-loggedin.js';
 import {
@@ -12,7 +13,18 @@ import {
 } from './_controller.js';
 
 const router = express.Router();
+import swagger  from 'swagger-jsdoc'
 
+
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Returns a sample message
+ *     responses:
+ *       200:
+ *         description: A successful response
+ */
 router.get('/users', isLoggedIn, getUsers);
 router.post('/register', registerAuth );
 router.post('/login', loginUser);
