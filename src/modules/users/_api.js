@@ -11,7 +11,6 @@ import {
   updateUsers ,
   registerAuth
 } from './_controller.js';
-
 const router = express.Router();
 
 

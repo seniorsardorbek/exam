@@ -13,6 +13,7 @@ import { getData } from './get_data.js';
 import { removeData } from './remove-data.js';
 import { showData } from './show-data.js';
 import { updateData } from './update-data.js';
+import fs from 'fs'
 /**
  * @param {express.Request} req
  * @param {express.Response} res

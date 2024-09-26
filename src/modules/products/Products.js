@@ -18,6 +18,12 @@ const productSchema = new mongoose.Schema(
       type: mongoose.SchemaTypes.Number,
       required: true
     },
+    images: {
+      type: [mongoose.SchemaTypes.String],  // Array of image URLs or paths
+      required: true,
+      default: []  // Default is an empty array
+    
+    },
 
     categoryId :  {
       type: mongoose.SchemaTypes.ObjectId,
