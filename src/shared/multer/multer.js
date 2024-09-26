@@ -5,7 +5,8 @@ export const upload = multer({
         cb(null, 'uploads/'); // Specify the directory for storing files
       },
       filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname); // Name the file with a timestamp
+        cb(null, Math.floor(1000 + Math.random() * 9000)
+        + '-' + file.originalname); // Name the file with a timestamp
       },
     }),
   });

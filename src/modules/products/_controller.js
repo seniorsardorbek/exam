@@ -44,9 +44,7 @@ export const postProduct = async (req, res, next) => {
   try {
     hasRole({ req }, ['admin']);
     httpValidator({ body: req.body }, postAddProductSchema);
-
     const result = await addData(req);
-
     res.status(200).json({
       result
     });

@@ -5,7 +5,7 @@ import {
   UnauthorizedError,
   ForbiddenError
 } from './index.js';
-
+import multerChecker from '../multer/multer.checker.js'; 
 /**
  * @param {Error} err
  * @param {express.Request} req
@@ -18,6 +18,7 @@ export default (err, req, res, next) => {
   else if (err instanceof UnauthorizedError) status = 401;
   else if (err instanceof ForbiddenError) status = 403;
   else if (err instanceof NotFoundError) status = 404;
-
+// if()
+  multerChecker(req, res , next)
   res.status(status).json({ error: err.message });
 };

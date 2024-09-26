@@ -2,7 +2,7 @@ import express from 'express';
 import isLoggedIn from '../../shared/auth/is-loggedin.js';
 import { postProduct ,showProduct , deleteProduct , getProducts, updateProduct  } from './_controller.js';
 
-import {upload} from "../../multer/multer.js"
+import {upload} from "../../shared/multer/multer.js"
 
 const router = express.Router();
 
