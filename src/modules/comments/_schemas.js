@@ -2,8 +2,8 @@ import Joi from 'joi';
 
 export const postAddCategorySchema = {
   body: Joi.object({
-    name: Joi.string().required(),
-    description: Joi.string().required(),
+    comment: Joi.string().required(),
+    productId: Joi.string().required(),
   })
 };
 
@@ -14,8 +14,7 @@ export const patchCategorySchema = {
     id: Joi.string().required()
   }),
   body: Joi.object({
-    name: Joi.string() ,
-    description: Joi.string() ,
+    comment: Joi.string(),
   })
 };
 

@@ -1,22 +1,18 @@
 import { BadRequestError, NotFoundError } from '../../shared/errors/index.js';
-import Category from './Categories.js';
+import Comment from './Comment.js';
 
 export const updateData = async (req) => {
   const { id } = req.params;
-  const exist = await Category.findById(id);
+  const exist = await Comment.findById(id);
   if (!exist) {
-    throw new NotFoundError(`${id} category not found`);
+    throw new NotFoundError(`${id} Comment not found`);
   }
-  const nameExist = await Category.findOne({ name: req.body?.name });
-  if (nameExist) {
-    throw new BadRequestError('Name already is exist!');
-  }
-
-  await Category.findOneAndUpdate(
+ 
+  await Comment.findOneAndUpdate(
     { _id: id },
     {
       ...req.body
     }
   );
-  return { message: 'Category is updated!' };
+  return { message: 'Comment is updated!' };
 };

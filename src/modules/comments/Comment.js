@@ -16,10 +16,7 @@ const commentSchema = new mongoose.Schema(
       ref : "Product" ,
       required: true
     },
-    comment: {
-      type: mongoose.SchemaTypes.String,
-      required: true
-    },
+   
     
     
    
@@ -40,7 +37,6 @@ const commentSchema = new mongoose.Schema(
   }
 );
 
-// CommentSchema.virtual("products" , { ref :"Product" , localField : "_id" ,foreignField : "CommentId" , justOne : false})
 
 const Comment = mongoose.model('Comment', commentSchema);
 

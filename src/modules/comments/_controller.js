@@ -8,7 +8,6 @@ import {
 import { addData } from './add-data.js';
 import { getData } from './get_data.js';
 import { removeData } from './remove-data.js';
-import { showData } from './show-data.js';
 import { updateData } from './update-data.js';
 /**
  * @param {express.Request} req
@@ -18,21 +17,14 @@ import { updateData } from './update-data.js';
 
 export const getComments = async (req, res, next) => {
   try {
-    const data = await getData({ ...req.query });
+    const data = await getData({ ...req.query } , req);
     res.status(200).send(data);
   } catch (error) {
     next(error);
   }
 };
 
-export const showComment = async (req, res, next) => {
-  try {
-    const data = await showData(req);
-    res.status(200).send(data);
-  } catch (error) {
-    next(error);
-  }
-};
+
 
 export const postComment = async (req, res, next) => {
   try {
